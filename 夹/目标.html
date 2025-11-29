@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红韵藏“忻”——忻州文化密码盲盒官方平台</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C8102E', // 中国红（主色）
+                        secondary: '#D4AF37', // 鎏金（辅助色）
+                        gray: '#F5F5F5', // 雅灰（背景色）
+                        dark: '#333333', // 深灰（文字色）
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray text-dark font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 bg-blur z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-primary text-2xl font-bold">红韵藏忻</span>
+                <i class="fa-solid fa-box-archive text-primary"></i>
+            </a>
+            
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#home" class="font-medium hover:text-primary transition">首页</a>
+                <a href="#blind-box" class="font-medium hover:text-primary transition">盲盒探秘</a>
+                <a href="#tourism" class="font-medium hover:text-primary transition">忻州漫游</a>
+                <a href="#interactive" class="font-medium hover:text-primary transition">互动打卡</a>
+                <a href="#about" class="font-medium hover:text-primary transition">关于我们</a>
+            </nav>
+            
+            <!-- 移动端汉堡菜单 -->
+            <button id="menu-btn" class="md:hidden text-dark text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <!-- 立即行动按钮 -->
+            <a href="#buy" class="hidden md:block bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition">
+                立即购买
+            </a>
+        </div>
+        
+        <!-- 移动端导航菜单（默认隐藏） -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-4">
+                <a href="#home" class="font-medium hover:text-primary transition py-2">首页</a>
+                <a href="#blind-box" class="font-medium hover:text-primary transition py-2">盲盒探秘</a>
+                <a href="#tourism" class="font-medium hover:text-primary transition py-2">忻州漫游</a>
+                <a href="#interactive" class="font-medium hover:text-primary transition py-2">互动打卡</a>
+                <a href="#about" class="font-medium hover:text-primary transition py-2">关于我们</a>
+                <a href="#buy" class="bg-primary text-white px-6 py-2 rounded-full text-center hover:bg-primary/90 transition">
+                    立即购买
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首页Banner -->
+    <section id="home" class="pt-20">
+        <div class="relative h-[80vh] overflow-hidden">
+            <!-- 轮播图容器 -->
+            <div id="banner-carousel" class="w-full h-full">
+                <!-- 轮播图1 -->
+                <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-1000">
+                    <img src="images/轮播图14.jpg" alt="盲盒与忻州实景" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-4">
+                        <div class="text-white">
+                            <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold mb-4 text-shadow">拆盲盒，解锁忻州千年密码</h1>
+                            <p class="text-[clamp(1rem,2vw,1.5rem)] mb-8 text-shadow">游三晋，邂逅边塞佛国风情</p>
+                            <a href="#blind-box" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary/90 transition">
+                                盲盒探秘 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 轮播图2 -->
+                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+                    <img src="images/轮播图2.jpg" alt="盲盒收集流程" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-4">
+                        <div class="text-white">
+                            <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold mb-4 text-shadow">14县市区文化碎片</h1>
+                            <p class="text-[clamp(1rem,2vw,1.5rem)] mb-8 text-shadow">拼出你心中的忻州</p>
+                            <a href="#interactive" class="bg-secondary text-white px-8 py-3 rounded-full text-lg hover:bg-secondary/90 transition">
+                                开始收集 <i class="fa-solid fa-puzzle-piece ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 轮播图3 -->
+                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+                    <img src="images/轮播图3.jpg" alt="忻州旅游精华" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-4">
+                        <div class="text-white">
+                            <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold mb-4 text-shadow">从方寸之美到山河壮阔</h1>
+                            <p class="text-[clamp(1rem,2vw,1.5rem)] mb-8 text-shadow">2025忻州文旅攻略已更新</p>
+                            <a href="#tourism" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary/90 transition">
+                                忻州漫游 <i class="fa-solid fa-map-location-dot ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 轮播控制按钮 -->
+            <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            
+            <!-- 轮播指示器 -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition" data-index="0"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition" data-index="1"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition" data-index="2"></button>
+            </div>
+        </div>
+        
+        <!-- 核心亮点区 -->
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 亮点1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="images/外包装.png"  alt="盲盒与文旅联动" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">盲盒×文旅联动</h3>
+                        <p class="text-gray-600">每款盲盒都是“旅游邀请函”——买盲盒送景区优惠券，打卡同款景点享专属福利</p>
+                    </div>
+                </div>
+                <!-- 亮点2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="images/图片1.jpg" alt="非遗体验赋能" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">非遗×体验赋能</h3>
+                        <p class="text-gray-600">不止收藏，更能体验——预约非遗工坊，亲手做盲盒里的同款手作</p>
+                    </div>
+                </div>
+                <!-- 亮点3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="images/隐藏.jpg" alt="限定稀缺吸引" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">限定×稀缺吸引</h3>
+                        <p class="text-gray-600">全国限量隐藏款上线！线下景区门店独家发售，先到先得</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 盲盒探秘板块 -->
+    <section id="blind-box" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">盲盒探秘</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <!-- 设计理念 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-6">设计理念：让地域文化可触摸</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray rounded-lg p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-landmark text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">长城红</h4>
+                        <p class="text-gray-600">忻州是长城重要关隘所在地，雁门关、宁武关等见证千年戍边历史</p>
+                    </div>
+                    <div class="bg-gray rounded-lg p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-map-location-dot text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">土地红</h4>
+                        <p class="text-gray-600">忻州是革命老区，红色基因代代相传，见证了无数英雄故事</p>
+                    </div>
+                    <div class="bg-gray rounded-lg p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gem text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">文化红</h4>
+                        <p class="text-gray-600">忻州非遗资源丰富，布老虎、花馍等是中华文化的鲜活载体</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 盲盒款式展示 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-6">全系列款式</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 款式1 -->
+                    <div class="bg-gray rounded-xl overflow-hidden hover:shadow-lg transition">
+                        <img src="images/雁门关.jpg" alt="雁门关城楼" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg mb-1">雁门关城楼（基础款）</h4>
+                            <p class="text-gray-600 text-sm mb-2">所属：代县 | 概率：70%</p>
+                            <p class="text-gray-600 text-sm mb-4">雁门关，号称“中华第一关”，是杨家将戍边的重要屏障</p>
+                            <div class="flex justify-between">
+                                <span class="text-primary font-bold">¥59</span>
+                                <a href="#buy" class="text-primary hover:underline">立即购买</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 款式2 -->
+                    <div class="bg-gray rounded-xl overflow-hidden hover:shadow-lg transition">
+                        <img src="images/五台山.jpg" alt="五台山白塔" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg mb-1">秀容书院（基础款）</h4>
+                            <p class="text-gray-600 text-sm mb-2">所属：忻府区 | 概率：70%</p>
+                            <p class="text-gray-600 text-sm mb-4">秀容书院依山势分为上中下三院，被誉为 "三晋文化展示高地" 和山西教育 "活化石"，是山西唯一保存完好且仍具教育功能的古书院。</p>
+                            <div class="flex justify-between">
+                                <span class="text-primary font-bold">¥59</span>
+                                <a href="#buy" class="text-primary hover:underline">立即购买</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 款式3 -->
+                    <div class="bg-gray rounded-xl overflow-hidden hover:shadow-lg transition">
+                        <img src="images/殿.jpg" alt="大成殿" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg mb-1">大成殿</h4>
+                            <p class="text-gray-600 text-sm mb-2">所属：代县 | 概率：70%</p>
+                            <p class="text-gray-600 text-sm mb-4">大成殿是文庙的主体建筑，祭祀 "大成至圣先师" 孔子的中心场所，通常为单檐或重檐庑殿顶 / 歇山顶，琉璃瓦覆顶，象征儒家文化至高地位的礼制建筑。</p>
+                            <div class="flex justify-between">
+                                <span class="text-primary font-bold">¥59</span>
+                                <a href="#buy" class="text-primary hover:underline">立即购买</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 款式4 -->
+                    <div class="bg-gray rounded-xl overflow-hidden hover:shadow-lg transition">
+                        <img src="images/楼.jpg" alt="全景套盒" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-lg mb-1">14县市区全景套盒</h4>
+                            <p class="text-gray-600 text-sm mb-2">套装 | 限量：1000套</p>
+                            <p class="text-gray-600 text-sm mb-4">含14款基础款+1款隐藏款，收藏价值极高</p>
+                            <div class="flex justify-between">
+                                <span class="text-primary font-bold">¥699</span>
+                                <a href="#buy" class="text-primary hover:underline">立即购买</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 购买渠道 -->
+            <div id="buy" class="bg-gray rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6">购买渠道</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-primary">线上渠道</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-store text-primary"></i>
+                                <span>官方商城：<a href="#" class="text-primary hover:underline">hongyuncangxin.com/shop</a></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-brands fa-taobao text-primary"></i>
+                                <span>淘宝旗舰店：红韵藏忻官方店</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-brands fa-jd text-primary"></i>
+                                <span>京东旗舰店：红韵藏忻官方旗舰店</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-brands fa-douyin text-primary"></i>
+                                <span>抖音小店：红韵藏忻文创</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-primary">线下渠道</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                                <span>五台山景区入口文创店</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                                <span>忻州古城文创旗舰店</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                                <span>雁门关游客中心售卖点</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                                <span>代县边靖楼文创专柜</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 忻州漫游板块 -->
+    <section id="tourism" class="bg-gray py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">忻州漫游</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <!-- 主题旅游路线 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-6">主题旅游路线</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- 路线1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                        <img src="images/1.jpg" alt="古建探秘之旅" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-3 text-primary">古建探秘之旅</h4>
+                            <div class="text-gray-600 mb-4">
+                                <p>Day1：代县雁门关</p>
+                                <p>Day2：忻府区边靖楼</p>
+                                <p>Day3：应县木塔</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">费用：500-800元/人</span>
+                                <a href="#" class="text-primary hover:underline">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 路线2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                        <img src="images/2.png" alt="非遗体验之旅" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-3 text-primary">非遗体验之旅</h4>
+                            <div class="text-gray-600 mb-4">
+                                <p>Day1：忻府区布老虎工坊</p>
+                                <p>Day2：定襄花馍基地</p>
+                                <p>Day3：河曲二人台剧场</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">适合：亲子、手工爱好者</span>
+                                <a href="#" class="text-primary hover:underline">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 路线3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                        <img src="images/3.png" alt="佛国禅修之旅" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-3 text-primary">佛国禅修之旅</h4>
+                            <div class="text-gray-600 mb-4">
+                                <p>Day1：五台山白塔祈福</p>
+                                <p>Day2：繁峙岩山寺观壁画</p>
+                                <p>Day3：寺院禅修体验</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">注意：需提前预约</span>
+                                <a href="#" class="text-primary hover:underline">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 文旅实用信息 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 美食图鉴 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-primary">美食图鉴</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <img src="images/4.jpg" alt="忻州碗托" class="w-20 h-20 rounded-lg object-cover">
+                            <div>
+                                <h4 class="font-bold">忻州碗托</h4>
+                                <p class="text-sm text-gray-600">推荐：忻州古城老碗托店 | 人均：8元</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <img src="images/5.jpg" alt="代县熬鱼" class="w-20 h-20 rounded-lg object-cover">
+                            <div>
+                                <h4 class="font-bold">代县熬鱼</h4>
+                                <p class="text-sm text-gray-600">推荐：雁门关客栈 | 人均：48元</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <img src="images/6.jpg" alt="五台山素斋" class="w-20 h-20 rounded-lg object-cover">
+                            <div>
+                                <h4 class="font-bold">五台山素斋</h4>
+                                <p class="text-sm text-gray-600">推荐：殊像寺素斋馆 | 人均：38元</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 交通汇总 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-primary">交通汇总</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">外部交通</h4>
+                            <p class="text-sm text-gray-600">高铁：忻州西站 → 太原（40分钟）、北京（3小时）</p>
+                            <p class="text-sm text-gray-600">飞机：五台山机场 → 北京、上海、广州等航线</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">内部交通</h4>
+                            <p class="text-sm text-gray-600">景区直通车：忻州古城 → 雁门关（1小时）、五台山（2小时）</p>
+                            <p class="text-sm text-gray-600">租车服务：日均价格150-300元，推荐平台：神州租车、一嗨租车</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动打卡板块 -->
+    <section id="interactive" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">互动打卡</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 文化密码收集墙 -->
+                <div class="bg-gray rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">文化密码收集墙</h3>
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-bold">你的收集进度</span>
+                            <span class="text-primary">3/14</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                            <div class="bg-primary h-4 rounded-full" style="width: 21%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-2 mb-6">
+                        <!-- 已收集 -->
+                        <div class="bg-primary/10 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-check text-primary mb-2"></i>
+                            <p class="text-sm">雁门关</p>
+                        </div>
+                        <div class="bg-primary/10 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-check text-primary mb-2"></i>
+                            <p class="text-sm">布老虎</p>
+                        </div>
+                        <div class="bg-primary/10 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-check text-primary mb-2"></i>
+                            <p class="text-sm">边靖楼</p>
+                        </div>
+                        <!-- 未收集 -->
+                        <div class="bg-gray-200 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-lock text-gray-400 mb-2"></i>
+                            <p class="text-sm">白塔</p>
+                        </div>
+                        <div class="bg-gray-200 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-lock text-gray-400 mb-2"></i>
+                            <p class="text-sm">花馍</p>
+                        </div>
+                        <div class="bg-gray-200 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-lock text-gray-400 mb-2"></i>
+                            <p class="text-sm">木塔</p>
+                        </div>
+                        <div class="bg-gray-200 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-lock text-gray-400 mb-2"></i>
+                            <p class="text-sm">二人台</p>
+                        </div>
+                        <div class="bg-gray-200 rounded-lg p-3 text-center">
+                            <i class="fa-solid fa-lock text-gray-400 mb-2"></i>
+                            <p class="text-sm">...</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition">
+                        扫描盲盒二维码解锁新密码
+                    </button>
+                </div>
+                
+                <!-- 解谜游戏 -->
+                <div class="bg-gray rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">解谜互动游戏</h3>
+                    
+                    <div class="bg-white rounded-lg p-6 mb-6">
+                        <h4 class="font-bold mb-4">盲盒线索猜景点</h4>
+                        <p class="mb-4 text-gray-600">线索：有箭窗、城垛，是杨家将戍边的关隘</p>
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <button class="bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition">雁门关</button>
+                            <button class="bg-gray-200 py-2 rounded-lg hover:bg-gray-300 transition">边靖楼</button>
+                            <button class="bg-gray-200 py-2 rounded-lg hover:bg-gray-300 transition">古钟楼</button>
+                            <button class="bg-gray-200 py-2 rounded-lg hover:bg-gray-300 transition">秀容书院</button>
+                        </div>
+                        <p class="text-sm text-gray-500">答对得10积分，积分可兑换盲盒折扣券</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6">
+                        <h4 class="font-bold mb-4">用户分享社区</h4>
+                        <p class="mb-4 text-gray-600">参与话题 #红韵藏忻盲盒打卡# 赢大奖</p>
+                        <button class="w-full bg-secondary text-white py-3 rounded-lg hover:bg-secondary/90 transition">
+                            立即分享 <i class="fa-solid fa-share-nodes ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+                
+                <!-- 联系我们 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">联系我们</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold mb-3">客服渠道</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <i class="fa-solid fa-phone text-primary"></i>
+                                    <span>电话：400-123-4567（9:00-18:00）</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                    <span>邮箱：hongyuncangxin@163.com</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fa-solid fa-headset text-primary"></i>
+                                    <span>在线客服：点击右侧悬浮图标</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-3">合作招商</h4>
+                            <p class="text-gray-600 mb-3">欢迎景区、文旅机构、电商平台洽谈合作</p>
+                            <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition">
+                                下载合作申请表
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-3">关注我们</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+                                    <i class="fa-brands fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+                                    <i class="fa-brands fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+                                    <i class="fa-brands fa-douyin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+                                    <i class="fa-brands fa-redhat"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">红韵藏忻</h4>
+                    <p class="text-gray-400 text-sm">以盲盒为媒，传播忻州文化，推动文旅融合</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">首页</a></li>
+                        <li><a href="#blind-box" class="hover:text-white transition">盲盒探秘</a></li>
+                        <li><a href="#tourism" class="hover:text-white transition">忻州漫游</a></li>
+                        <li><a href="#interactive" class="hover:text-white transition">互动打卡</a></li>
+                    </ul>
+                </div>
+                <div>
+                   
+           
+    </footer>
+
+    <!-- 右侧悬浮客服按钮 -->
+    <div class="fixed right-4 bottom-4 z-40">
+        <button class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-primary/90 transition">
+            <i class="fa-solid fa-headset text-xl"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript 交互逻辑 -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+        
+        // Banner轮播逻辑
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentIndex = 0;
+        
+        // 显示指定索引的轮播图
+        function showSlide(index) {
+            // 隐藏所有轮播图
+            carouselItems.forEach(item => {
+                item.classList.add('opacity-0');
+                item.classList.remove('opacity-100');
+            });
+            
+            // 重置所有指示器
+            carouselDots.forEach(dot => {
+                dot.classList.remove('bg-white/50');
+                dot.classList.add('bg-white/30');
+            });
+            
+            // 显示当前轮播图
+            carouselItems[index].classList.remove('opacity-0');
+            carouselItems[index].classList.add('opacity-100');
+            
+            // 激活当前指示器
+            carouselDots[index].classList.remove('bg-white/30');
+            carouselDots[index].classList.add('bg-white/50');
+            
+            currentIndex = index;
+        }
+        
+        // 下一张
+        function nextSlide() {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= carouselItems.length) {
+                newIndex = 0;
+            }
+            showSlide(newIndex);
+        }
+        
+        // 上一张
+        function prevSlide() {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) {
+                newIndex = carouselItems.length - 1;
+            }
+            showSlide(newIndex);
+        }
+        
+        // 指示器点击事件
+        carouselDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // 按钮点击事件
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        // 自动轮播
+        setInterval(nextSlide, 5000);
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 减去导航栏高度
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动端，点击后关闭菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('i');
+                        icon.classList.replace('fa-times', 'fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
